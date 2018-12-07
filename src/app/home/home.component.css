@@ -1,0 +1,131 @@
+#navbar{
+    background: white;
+    height: auto;
+}
+#navbar ul li p{
+    margin: 0px;
+}
+#navbar{
+    display: none;
+     height: auto;
+     border-bottom: 0px solid;
+     box-shadow: 0px 0px 25px grey;
+     display: block;
+     margin-bottom: 30px;
+     width: 100%;
+     position: fixed;
+     z-index: 1;
+ }
+#navbar ul{
+    display: grid;
+    grid-template-columns:20% 72% 8%;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+#navbar ul li{
+    font-family: cursive;
+    font-size: 1.2em;
+    padding: 6px 3px 0px 3px; 
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+}
+#logo{
+    font-weight: bold;
+    justify-self: start;
+    display: block;
+    height: 30px;
+    padding: 0px 0px 0px 0px;
+}
+#logo :hover{
+    cursor: pointer;
+}
+#welcome{
+    height: 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#chatRoom{
+    display: block;
+    min-width: 400px;
+}
+
+#chatHead{
+    display: block;
+    margin: 0px;
+}
+
+h3{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.fstyle{
+    font-family: cursive;
+    color: slategray;
+}
+
+
+.postbody{
+    display: block;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    max-width: 670px;
+    overflow: auto;
+    height: auto;
+}
+
+.pimg{
+    display: block;
+    width: 650px;
+    height: 450px;
+    resize: both;
+    margin-bottom: 5px;
+}   
+
+#chatbox{
+    position: fixed;
+    display: block;
+    border: 1px solid silver;
+    height: 520px;
+    padding: 20px;
+}
+
+#chatroom{
+    display: block;
+    border: 1px solid black;
+    min-height: 510px;
+    min-width: 300px;
+}
+
+.pdescription{
+    display: block;
+    width: 650px;
+}
+
+#posts{
+    margin-left: 60px;
+}
+
+.sbar{
+    display: inline-block;
+    max-width: 400px;
+    margin-bottom: 5px;
+}
+
+#homepage{
+    display: block;
+    position: relative;
+    top: 60px;
+}
+
+#sndbtn{
+    display: block;
+    position: relative;
+    bottom: 0px;
+}

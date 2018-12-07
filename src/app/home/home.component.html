@@ -1,0 +1,19 @@
+<div id="navbar" ngif="!home">
+    <ul>
+        <li id="logo"><img id="welcome" src="../../assets/logo.jpg" (click)="goHome()" alt="Give Alternate Path" class="rounded" ></li>
+        <li>  
+                    <div id="custom-search-input" class="sbar">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" id ="searchbox"  placeholder="Search for HashTag" [(ngModel)]="searchHash"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button">
+                                        <i class="fa fa-search fa-1x"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+        </li>
+        <li id="Profile"><img src="../../assets/user.png" alt="Give Alternate Path" class="rounded" (click)="viewProfile()" ></li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,83 @@
+<div id="navbar">
+    <ul>
+        <li id="logo"><img id="welcome" src="../../assets/logo.jpg" (click)="goHome()" alt="Give Alternate Path" class="rounded" ></li>
+        <li>  
+                    <div id="custom-search-input" class="sbar">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" id ="searchbox" name="searchbox" laceholder="Search for HashTag" [(ngModel)]="searchHash"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button">
+                                        <i class="fa fa-search fa-1x"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+        </li>
+        <li id="Profile"><img src="../../assets/user.png" alt="Give Alternate Path" class="rounded" (click)="viewProfile()" ></li>
+    </ul>
+</div>
+
+
+<div id="homepage">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+           <div class="postbody" *ngFor="let post of posts  | filter:searchHash ">
+                 <div class="pauthor fstyle"><h4>{{post.by}}</h4></div>
+                 <img class="pimg img-rounded rounded" [src]="post.path" [alt]="post.title" *ngIf="post.type">
+                 <div class="pdescription fstyle">{{post.hashtag | uppercase}}</div>
+                 <div class="pdescription fstyle">{{post.content}}</div>
+            </div>
+     </div>
+      <!--
+      <div class="col-md-6">
+                 <div class="postbody">
+                      <div class="pauthor fstyle" ><h4>Scarlett</h4></div>
+                      <img class="pimg img-rounded rounded" src="../../../assets/art.jpg" alt="">
+                      <div class="pdescription fstyle">Scarlett Johanson</div>
+                  </div>
+                  <div class="postbody">
+                          <div class="pauthor fstyle" ><h4>Scarlett</h4></div>
+                          <img class="pimg img-rounded rounded" src="../../../assets/chairs.jpg" alt="">
+                          <div class="pdescription fstyle">Scarlett Johanson</div>
+                      </div>
+                      <div class="postbody">
+                              <div class="pauthor fstyle" ><h4>Scarlett</h4></div>
+                              <img class="pimg img-rounded rounded" src="../../../assets/math-art.jpg" alt="">
+                              <div class="pdescription fstyle">Scarlett Johanson</div>
+                          </div>
+      </div>
+      -->
+      <div class="col-md-4">
+            <input type="text" class="form-control"  [(ngModel)]="newTag" name="newTag" id="newTag"> 
+            <button id="newTagBtn" class="btn btn-dark" (click)="createNewTag()" >Create New HashTag</button>
+              <div id="chatbox">
+                          <div id="chatHead">
+                             <h3  class="fstyle">Chat</h3> 
+                          </div>
+                          <select id="chatTags" name="currentTag" class="form-control"  [(ngModel)]="currentTag" value="null" (ngModelChange)="loadChatRoom()">
+                            <option [ngValue]="null">Select HashTag</option>   
+                            <option *ngFor="let tag of chatTags">{{tag}}</option>
+                          </select>
+                      <div id="chatRoom">
+                         <!--
+                          <div class="msg" *ngFor="let msg of messages" >
+                          <p>{{msg.text}}</p>
+                          <p>{{msg.by}}</p>
+                          <p>{{msg.time}}</p>
+                          </div>
+                        -->
+                        <div class="msg" *ngFor="let msg of messages">
+                                <p>{{msg.text}}</p>
+                                <span class="time-right"><pre>{{msg.by}}  {{msg.time | date:'medium' }}</pre></span>
+                        </div>
+                      </div>
+                      <i class="fa fa-refresh" aria-hidden="true" (click)="loadChatRoom()"></i>
+                      <input type="text" class="form-control" [(ngModel)]="chatmsg" id="msgbox" name="newmessage">
+                      <button id="sndbtn" (click)="sendmsg()" class="btn btn-primary" >Send</button>
+            </div>          
+      </div>
+  </div>
+</div>
+  
+  

@@ -1,0 +1,51 @@
+<div class="image" >
+    <div id="log"    >
+      <h4 id="user" > Don't have an account </h4>  
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <label id="ii" ><b>LOGIN</b></label>
+           
+          <label id="i1" for="uname"><b>Email</b></label>
+          <input id="t1" type="text" formControlName="email" placeholder="Your Username " name="uname" required>
+          <label id="i2" for="psw"><b>Password</b></label>
+          <input id="t2" type="password" formControlName="password" placeholder="Your Password " name="psw" required>
+              
+          <button id="b1" type="submit">Login</button>   
+          </form>
+     
+<button id="b2" (click)="dispSignUp()">SignUp</button>
+    
+    <div  id="id01" class="modal" [ngStyle]="{display: disp ? 'block' : 'none'}">
+      <span id="sp" class="close" (click)="closedispSignUp()" title="Close Modal">Close</span>
+      <form  class="modal-content"  [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div class="container">
+          <h2>Sign Up To See Photos And Videos From Your Friends </h2>
+                    <hr>
+                      
+                    <label for="name"><b>Name</b></label>
+                    <input formControlName="name" type="text" placeholder="Name " required id="name" class="form-control"  name="name">
+                  
+                    <label for="email"><b>Email</b></label>
+                    <input formControlName="email" type="text" placeholder="Email"  required id="email" class="form-control"  name="email">
+              
+                    <label for="roll"><b>What's Your Job In This College </b></label>
+                    <input formControlName="who" type="text" placeholder="Staff / Student " required id="roll" class="form-control" n name="roll">
+            
+                    <label for="psw"><b>Password</b></label>
+                    <input formControlName="password" type="password" placeholder="Password "  required id="password" class="form-control"  name="password">
+              
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password "  required id="psw-repeat" class="form-control"  name="psw-repeat" >
+                    
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+              
+                    <div class="clearfix">
+                      <button type="button"  (click)="closedispSignUp()" class="cancelbtn">Cancel</button>
+                      <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>        
+          </div>
+    </div>
+    
+    
